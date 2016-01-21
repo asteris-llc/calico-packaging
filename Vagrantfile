@@ -9,8 +9,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "bento/centos-7.1"
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--cpus", "4"]
-    vb.customize ["modifyvm", :id, "--memory", "8192"]
+    vb.customize ["modifyvm", :id, "--cpus", "2"]
+    vb.customize ["modifyvm", :id, "--memory", "512"]
   end
 
   ["bootstrap.sh"].each do |script|
