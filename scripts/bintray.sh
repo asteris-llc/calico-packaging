@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-BINTRAY_PROJECT='testing/calico'
 OUTPUT=${1:-out}
 
 for PKG in $(ls $OUTPUT); do
