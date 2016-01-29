@@ -1,6 +1,6 @@
 ---
 name: calico 
-version: 0.14.0
+version: 0.15.0
 license: ASL 2.0
 iteration: 1
 vendor: Metaswitch
@@ -16,12 +16,16 @@ resources:
   - url: https://github.com/projectcalico/calico-mesos/releases/download/v0.1.3/calico_mesos
     hash-type: sha1
     hash: 7335589f4f26b0379b82cf4b145add9266718c98
+  - url: https://github.com/projectcalico/calico-cni/releases/download/v1.0.0/calico
+    hash: 90d5ff6c91360b1f64cedf7a4500fec29ef4a059
 
 targets:
   - src: '{{.BuildRoot}}/calicoctl'
     dest: /usr/bin/calicoctl
   - src: '{{.BuildRoot}}/calico_mesos'
     dest: /usr/local/bin/calico_mesos
+  - src: '{{.BuildRoot}}/calico'
+    dest: /opt/cni/bin/calico
 
 scripts:
   before-install: |
