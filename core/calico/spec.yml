@@ -32,7 +32,8 @@ scripts:
     modprobe xt_set
     echo "xt_set" > /etc/modules-load.d/calico-modules.conf
     sysctl -w net.ipv4.ip_forward=1
-    
+  after-install: |
+    chmod +x /opt/cni/bin/calico 
  
 
 extra-args: |
